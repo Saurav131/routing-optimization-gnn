@@ -1,3 +1,28 @@
+## Workflow
+
+Traffic Matrix Generation
+            │ Preprocessing
+            ▼
+      Traffic Demands
+            │
+            ▼
+      MILP Optimizer
+            │
+            ▼
+    Optimal Routing Paths
+            │
+            ▼
+      Graph Construction
+            │
+            ▼
+    Feature Extraction
+            │
+            ▼
+      GNN Training
+            │
+            ▼
+   Real-Time Route Prediction
+
 ## Dataset
 
 The model is trained using the publicly available GEANT network dataset.
@@ -72,6 +97,25 @@ Architecture:
 The GNN learns routing policies directly from MILP-generated solutions while explicitly exploiting network topology through message passing.
 
 For comparison, a fully-connected DNN baseline is also implemented.
+
+
+## Repository Structure
+
+### MILP.py
+
+Implements the Mixed Integer Linear Programming formulation used to generate optimal routing solutions. The solver output serves as the ground-truth labels for training the surrogate machine learning models.
+
+### preprocessing Traffic Matrix.ipynb
+
+Generates traffic demands, preprocesses traffic matrices and prepares graph datasets for routing.
+
+### GNN.py
+
+Implements the Graph Neural Network routing surrogate model. The network learns routing policies from MILP-generated solutions using message-passing operations on graph-structured network data.
+
+### DNN.py
+
+Implements a fully connected neural network baseline used for comparison against graph-based approaches.
 
 
 ## Project Background
