@@ -1,24 +1,24 @@
 ## Workflow
 
-Traffic Matrix Generation
+Traffic Matrix Dataset
             │ Preprocessing
             ▼
       Traffic Demands
             │
             ▼
-      MILP Optimizer
+      MILP Optimizer Solver
+            │Sequencial routing and updates 
+            ▼
+    Optimal Routing Paths and network state dataset
             │
             ▼
-    Optimal Routing Paths
+      GNN Training with massage passing
             │
             ▼
-      Graph Construction
+NNConv edge and node feature to capture network state
             │
             ▼
-    Feature Extraction
-            │
-            ▼
-      GNN Training
+     Path reconstruction
             │
             ▼
    Real-Time Route Prediction
@@ -38,15 +38,18 @@ Each flow is represented as:
 
 f = (source, destination, bandwidth demand, arrival time, duration)
 
-Flow arrival times are shifted by 900 seconds between consecutive traffic matrices to reproduce the temporal evolution of network traffic.
+Flow arrival times are shifted by 900 seconds between consecutive traffic matrices to reproduce the sequence of traffic demands that agrees with traffic matrices.
 
-Reference:
+Dataset is available here:
 S. Uhlig et al., "Providing Public Intradomain Traffic Matrices to the Research Community", SIGCOMM CCR, 2006.
 
 
 ## MILP-Based Routing Framework
 
-Ground-truth routing decisions are generated using a sequential Mixed Integer Linear Programming (MILP) framework.
+ Built a PuLP-based a Mixed Integer Linear Programming (MILP) solver with cost or optimization function 
+ 
+<img width="292" height="91" alt="image" src="https://github.com/user-attachments/assets/a47361d7-5218-4b72-91c8-8ca7c41bc434" />
+
 
 For each incoming flow:
 
