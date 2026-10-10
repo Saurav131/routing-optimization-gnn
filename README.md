@@ -1,27 +1,33 @@
 ## Workflow
 
+```text
 Traffic Matrix Dataset
-            │ Preprocessing
-            ▼
-      Traffic Demands
-            │
-            ▼
-      MILP Optimizer Solver
-            │Sequencial routing and updates 
-            ▼
-    Optimal Routing Paths and network state dataset
-            │
-            ▼
-      GNN Training with massage passing
-            │
-            ▼
-NNConv edge and node feature to capture network state
-            │
-            ▼
-     Path reconstruction
-            │
-            ▼
+          |
+          v
+     Preprocessing
+          |
+          v
+     Traffic Demands
+          |
+          v
+    MILP Optimizer
+          |
+          | Sequential routing and updates
+          v
+Optimal Routing Paths and Network State Dataset
+          |
+          v
+  GNN Training with Message Passing
+          |
+          v
+  NNConv: Learning from Node and Edge Features
+          |
+          v
+      Path Reconstruction
+          |
+          v
    Real-Time Route Prediction
+```
 
 ## Dataset
 
