@@ -24,9 +24,6 @@ Optimal Routing Paths and Network State Dataset
           |
           v
       Path Reconstruction
-          |
-          v
-   Real-Time Route Prediction
 ```
 
 ## Dataset
