@@ -53,18 +53,12 @@ S. Uhlig et al., "Providing Public Intradomain Traffic Matrices to the Research 
 ## MILP-Based Routing Framework
 
  Built a PuLP-based a Mixed Integer Linear Programming (MILP) solver with cost or optimization function 
+
  
 <img width="292" height="91" alt="image" src="https://github.com/user-attachments/assets/a47361d7-5218-4b72-91c8-8ca7c41bc434" />
 
+ where λ is a small constant edge penalty. The routing problem is therefore formulated as selecting the feasible path with minimum cost, This objective naturally discourages the use of highly utilized edges while simultaneously penalizing unnecessarily long paths. Consequently, incoming flows are preferentially routed through less congested regions of the network, leading to a more balanced utilization of network resources.
 
-For each incoming flow:
-
-1. Candidate source-destination paths are generated using NetworkX.
-2. Current edge utilizations are maintained dynamically.
-3. Capacity constraints are enforced.
-4. The path with minimum congestion-aware cost is selected.
-
-The objective function discourages routing through highly utilized links while penalizing unnecessarily long paths.
 
 After every flow arrival or departure:
 
@@ -120,7 +114,7 @@ Generates traffic demands, preprocesses traffic matrices and prepares graph data
 
 ### GNN.py
 
-Implements the Graph Neural Network routing surrogate model. The network learns routing policies from MILP-generated solutions using message-passing operations on graph-structured network data.
+Implements the Graph Neural Network routing model.
 
 ### DNN.py
 
@@ -129,7 +123,7 @@ Implements a fully connected neural network baseline used for comparison against
 
 ## Project Background
 
-This work was developed as part of the National Supercomputing Mission (NSM) under the MPPLab High Performance Computing and Artificial Intelligence activities at C-DAC.
+This work was developed as part of the National Supercomputing Mission (NSM) under the MPPLab project at C-DAC.
 
 Preliminary results from this work were presented at:
 
