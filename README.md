@@ -126,6 +126,6 @@ Preliminary results from this work were presented at:
 
 ### CASML 2025
 
-Conference on Advances in Simulation, Machine Learning and Artificial Intelligence (CASML 2025)
+International Conference on Applied AI and Scientific Machine Learning (CASML 2025, IISc)
 
 
